@@ -4,20 +4,16 @@ import java.util.*;
 public class anewalphabet {
 	public static void main(String[] args) throws IOException {
 		Scanner input = new Scanner(System.in);
-		String text = input.next();
+		String text = input.nextLine();
+		text = text.toLowerCase();
+		String[] newAlph1 = {"@", "8", "(", "|)", "3", "#", "6", "[-]", "|", "_|", "|<", "1", "[]\\/[]", "[]\\[]", "0", "|D", "(,)", "|Z", "$", "']['", "|_|", "\\/", "\\/\\/", "}{", "`/", "2"};
 		String translated = "";
 		for(int i = 0; i < text.length(); i++) {
-			if(text.charAt(i) == 'a' || text.charAt(i) == 'A') {
-				translated += '@';
-			} else if(text.charAt(i) == 'b' || text.charAt(i) == 'B') {
-				translated += '8';
-			} else if(text.charAt(i) == 'c' || text.charAt(i) == 'C') {
-				translated += '(';
-			} else if(text.charAt(i) == 'd' || text.charAt(i) == 'D') {
-				translated += ')';
-			} else if(text.charAt(i) == 'e' || text.charAt(i) == 'E') {
-				translated += '3';
-			} 
+			int ind = (int)(text.charAt(i));
+			if(ind >= 97 && ind <= 122) {
+				String newChar = newAlph1[ind - 'a'];
+				translated += newChar;
+			} else translated += text.charAt(i);
 		}
 		System.out.println(translated);
 	}
