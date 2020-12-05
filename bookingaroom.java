@@ -8,18 +8,13 @@ public class bookingaroom {
 		int n = input.nextInt();
 		if(r == n) System.out.print("too late");
 		else{
-			int[] num = new int[n];
-			for(int i = 0; i < n; i++) num[i] = input.nextInt();
-			boolean notIn = true;
-			int j = 1;
+			ArrayList<Integer> rooms = new ArrayList<Integer>();
+			for(int i = 0; i < r; i++) rooms.add(i + 1);
 			for(int i = 0; i < n; i++) {
-				while(j < n && notIn == true) {
-					if(j != num[i]) notIn = false;
-					else notIn = true;
-					j += 1;
-				}
+				int rm = input.nextInt();
+				rooms.remove(new Integer(rm));
 			}
-			System.out.print(j); 
+			System.out.println(rooms.get(0));
 		}
 	}
 }
