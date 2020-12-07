@@ -5,19 +5,18 @@ public class babelfish {
 	public static void main(String[] args) throws IOException {
 		Scanner input = new Scanner(System.in);
 		HashMap<String, String> dict = new HashMap<String, String>();
-		while(input.hasNextLine()) {
-			String words = input.nextLine();
-			if(words.equals("")) break;
-			String[] pairs = words.split(" ");
-			String english = pairs[0];
-			String foreign = pairs[1];
+		String words = input.nextLine();
+		while(words.contains(" ")) {
+			String english = words.split(" ")[0];
+			String foreign = words.split(" ")[1];
 			dict.put(foreign, english);
+			words = input.nextLine();
 		}
 		while(input.hasNextLine()) {
-			String word = input.next();
+			String word = input.nextLine();
 			if(dict.containsKey(word)) System.out.println(dict.get(word));
 			else System.out.println("eh");
 		}
-		System.out.println(dict);
+		input.close();
 	}
 }
