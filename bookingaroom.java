@@ -12,7 +12,7 @@ public class bookingaroom {
 			for(int i = 0; i < r; i++) rooms.add(i + 1);
 			for(int i = 0; i < n; i++) {
 				int rm = input.nextInt();
-				rooms.remove(new Integer(rm));
+				rooms.remove(new Integer (rm));
 			}
 			System.out.println(rooms.get(0));
 		}
